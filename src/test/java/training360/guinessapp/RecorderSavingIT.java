@@ -1,4 +1,4 @@
-/*package training360.guinessapp;
+package training360.guinessapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@Sql(statements = {"delete from world_record", "delete from recorder"})
+//@Sql(statements = {"delete from world_record", "delete from recorder"})
 public class RecorderSavingIT {
 
     @Autowired
@@ -47,4 +47,5 @@ public class RecorderSavingIT {
         assertEquals(Status.BAD_REQUEST, problem.getStatus());
         assertEquals("must be in the past", (((List<Map<String, String>>) problem.getParameters().get("violations")).get(0)).get("message"));
     }
-}*/
+}
+
