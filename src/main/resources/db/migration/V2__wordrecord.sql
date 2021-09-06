@@ -1,0 +1,1 @@
+create table world_record (id bigint not null auto_increment, date_of_record date, description varchar(255), recorder_id bigint, unit_of_measure varchar(255), value double precision, primary key (id)) engine=InnoDB;

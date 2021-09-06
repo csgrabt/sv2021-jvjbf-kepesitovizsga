@@ -19,7 +19,7 @@ public class WorldRecordCreateCommand {
     @NotBlank
     private String unitOfMeasure;
     @NotNull
-    private LocalDate date;
+    private LocalDate dateOfRecord;
     @NotNull
     private Long recorderId;
 }

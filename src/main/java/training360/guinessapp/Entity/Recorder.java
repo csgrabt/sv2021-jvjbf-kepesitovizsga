@@ -1,4 +1,4 @@
-package training360.guinessapp;
+package training360.guinessapp.Entity;
 
 
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "recorders")
+@Table(name = "recorder")
 public class Recorder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

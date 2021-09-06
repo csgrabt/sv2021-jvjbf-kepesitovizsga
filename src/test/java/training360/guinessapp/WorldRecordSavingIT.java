@@ -20,7 +20,7 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-//@Sql(statements = {"delete from world_record", "delete from recorder"})
+@Sql(statements = {"delete from world_record", "delete from recorder"})
 public class WorldRecordSavingIT {
 
     @Autowired
@@ -40,13 +40,13 @@ public class WorldRecordSavingIT {
         WorldRecordCreateCommand inputCommand =
                 new WorldRecordCreateCommand("Largest pizza", 5.78, "meter", LocalDate.of(2001, 11, 11), recorderId);
 
-        WorldRecordDto record = template.postForObject("/api/worldrecords", inputCommand, WorldRecordDto.class);
+      WorldRecordDto record = template.postForObject("/api/worldrecords", inputCommand, WorldRecordDto.class);
 
-        assertEquals("Largest pizza", record.getDescription());
-        assertEquals(5.78, record.getValue(), 0.005);
-        assertEquals("meter", record.getUnitOfMeasure());
-        assertEquals(LocalDate.of(2001, 11, 11), record.getDateOfRecord());
-        assertEquals("Ben", record.getRecorderName());
+      assertEquals("Largest pizza", record.getDescription());
+      assertEquals(5.78, record.getValue(), 0.005);
+      assertEquals("meter", record.getUnitOfMeasure());
+      assertEquals(LocalDate.of(2001, 11, 11), record.getDateOfRecord());
+      assertEquals("Ben", record.getRecorderName());
     }
 
     @Test

@@ -1,4 +1,4 @@
-package training360.guinessapp;
+package training360.guinessapp.controller;
 
 
 import lombok.AllArgsConstructor;
@@ -8,14 +8,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.zalando.problem.Problem;
 import org.zalando.problem.Status;
-import training360.guinessapp.dto.RecorderCreateCommand;
-import training360.guinessapp.dto.RecorderDto;
-import training360.guinessapp.dto.WorldRecordCreateCommand;
-import training360.guinessapp.dto.WorldRecordDto;
+import training360.guinessapp.dto.*;
+import training360.guinessapp.sevice.WordRecordService;
 
 import javax.validation.Valid;
 import java.net.URI;
-import java.util.Map;
 
 @RequestMapping("/api/worldrecords")
 @RestController
@@ -29,6 +26,15 @@ public class WordRecordController {
     public WorldRecordDto createEmployee(@Valid @RequestBody WorldRecordCreateCommand command) {
         return wordRecordService.createWordRecord(command);
     }
+
+
+    @PutMapping("/{id}/beatrecords")
+    @ResponseStatus(HttpStatus.CREATED)
+    public BeatWorldRecordDto beatWorldRecord(@PathVariable("id") Long id, @Valid @RequestBody BeatWorldRecordCommand command) {
+        return wordRecordService.beatWordRecord(id, command);
+    }
+
+
 
 
 
