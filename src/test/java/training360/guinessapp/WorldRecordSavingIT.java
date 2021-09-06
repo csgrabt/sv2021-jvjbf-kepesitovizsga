@@ -1,4 +1,4 @@
-/*package training360.guinessapp;
+package training360.guinessapp;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,7 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@Sql(statements = {"delete from world_record", "delete from recorder"})
+//@Sql(statements = {"delete from world_record", "delete from recorder"})
 public class WorldRecordSavingIT {
 
     @Autowired
@@ -70,4 +70,4 @@ public class WorldRecordSavingIT {
     }
 
 
-}*/
+}
