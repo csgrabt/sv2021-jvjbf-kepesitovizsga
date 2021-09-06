@@ -1,4 +1,4 @@
-package training360;
+package training360.guinessapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
